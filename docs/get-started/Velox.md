@@ -546,7 +546,7 @@ cd /path_to_gluten
 
 ## 6.2 Enable IAA with Gzip Compression for shuffle compression
 
-1. To enable QAT at run-time, first make sure you have configured the IAA Work-Queues correctly, and the file permissions of /dev/iax/wqX.0 are correct.
+1. To enable IAA at run-time, first make sure you have configured the IAA Work-Queues correctly, and the file permissions of /dev/iax/wqX.0 are correct.
 
 ```bash
 sudo ls -l /dev/iax
@@ -611,7 +611,7 @@ var gluten_root = "/PATH/TO/GLUTEN"
 Below script shows an example about how to run the testing, you should modify the parameters such as executor cores, memory, offHeap size based on your environment. 
 
 ```bash
-export GLUTEN_JAR = /PATH/TO/GLUTEN/backends-velox/target/<gluten-jar>
+export GLUTEN_JAR = gluten_root/backends-velox/target/<gluten-jar>
 cat tpch_parquet.scala | spark-shell --name tpch_powertest_velox \
   --master yarn --deploy-mode client \
   --conf spark.plugins=io.glutenproject.GlutenPlugin \
